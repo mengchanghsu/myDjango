@@ -1,0 +1,2 @@
+# myDjango
+Django練習

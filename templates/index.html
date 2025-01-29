@@ -1,0 +1,21 @@
+<!-- 使用 extends 繼承母版 base.html -->
+{% extends 'base.html'%}
+
+<!-- 使用 block title 填寫子網頁標題 -->
+{% block title %}{{pageTitle}}{% endblock %}
+
+<!-- 使用 block main 填寫子網頁內容 -->
+{% block main %}
+    <h1>{{mainTitle}}</h1>
+    <p>{{mainContent}}</p>
+    {% if artitles %}
+        {% for i in artitles %}
+        <article>
+            <h2>{{i.aTitle}}</h2>
+            <p>{{i.aContent}}</p>
+        </article>
+        {% endfor %}
+    {% else %}
+        <p>沒有資料</p>
+    {% endif %}
+{% endblock %}

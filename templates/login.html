@@ -1,0 +1,19 @@
+<!-- 使用 extends 繼承母版 base.html -->
+{% extends 'base.html'%}
+
+<!-- 使用 block title 填寫子網頁標題 -->
+{% block title %}使用者登入{% endblock %}
+
+<!-- 使用 block main 填寫子網頁內容 -->
+{% block main %}
+    <h1>使用者登入</h1>
+    <!-- 建立表單,傳送到/myapp/login/ -->
+    <form action="/myapp/login/" method="post">
+        {% csrf_token %}
+        <label for="uName">名稱：</label>
+        <input id="uName" type="text" name="uName">
+        <label for="uPass">密碼：</label>
+        <input id="uPass" type="text" name="uPass">
+        <input type="submit" value="送出">
+    </form>
+{% endblock %}

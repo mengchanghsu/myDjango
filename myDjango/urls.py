@@ -21,9 +21,14 @@ import myapp.views as myapp_views  # 定義別名以區別後續可能有多個a
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # OPfuturesSim.views
+    # myapp.views
     path('myapp/', myapp_views.home),
     path('myapp/hi/<username>/', myapp_views.hiname),      # 傳遞字串參數 username
     path('myapp/age/<int:year>/', myapp_views.age),        # 傳遞數值參數 year
     path('myapp/hello/', myapp_views.hello_view),
+    path('myapp/getName/<username>/', myapp_views.getOneByName), # 傳遞字串參數 username
+    path('myapp/getAll/', myapp_views.getAll),
+    path('myapp/getAll_pd/', myapp_views.getAll_pd),
+    path('myapp/templates/', myapp_views.main),     # 模板繼承範例
+    path('myapp/login/', myapp_views.login),        # 表單範例
 ]
